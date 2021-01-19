@@ -1,0 +1,63 @@
+#new-post {
+    /* margin-left: 400px; */
+    margin-top: 50px;
+    width: 40%;
+    margin-left: 400px;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: xx-large;
+     background: -webkit-linear-gradient(rgb(247, 181, 95), rgb(59, 153, 241));
+     background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+}
+
+.examinar {
+    font-size: 12px;
+}
+
+.text_area {
+    font-size: 12px;
+}
+
+.frase {
+    text-align: center;
+}
+
+#creativo {
+     font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+}
+
+#imagina {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+
+#imaginar {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 25px;
+    background: -webkit-linear-gradient(rgb(76, 211, 221), rgb(240, 81, 205), rgb(201, 86, 51));
+     background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btnAdd_post {
+    background-color: tomato;
+}
+
+.card {
+    border: none;
+    background-color: rgba(182, 182, 182, 0.158);
+    border-radius: 35px;
+    padding: 20px;
+}

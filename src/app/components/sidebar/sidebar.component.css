@@ -1,0 +1,75 @@
+.div_me {
+    margin-top: 30px;
+}
+
+#user-card {
+    padding: 25px;
+    width: 28%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#user-card .avatar{
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-left: 140px;
+    margin-bottom: 15px;
+
+}
+
+#user-card .avatar img{
+    width: 100%;
+}
+
+.nameLast .name-lastName{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#user-card .stats {
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+#user-card .label-stats,
+#user-card .number-stats {
+    display: block;
+    text-align: center;
+}
+
+#user-card .following {
+    float: left;
+    padding-left: 18px;
+    margin-top: 20px;
+    padding-right: 18px;
+    border-right: 2px solid #ccc;
+}
+
+#user-card .label-stats {
+    font-weight: bold;
+    color: #555555;
+}
+
+#user-card .following:last-child{
+    border: none;
+}
+
+#user-card .following:first-child{
+    padding-left: 6px;
+}
+
+#user-card .number-stats {
+    font-weight: normal;
+    color: #555555;
+}
+
+#user-card .stats a{
+    text-decoration: none;
+}
+
+#me {
+    text-align: center;
+    margin-right: 80px;
+}

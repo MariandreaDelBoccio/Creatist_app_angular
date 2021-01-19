@@ -1,0 +1,63 @@
+<div class="bg-image"></div>
+
+<div class="col-lg-3 offset-lg-4" id="register">
+    <h3>Regístrate</h3>
+
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Registro completado correctamente, <a [routerLink]="['/login']">Identifícate aquí</a>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        ¡Lo sentimos! No hemos podido registrar tus datos ): Inténtalo de nuevo.
+    </div>
+
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lo-10">
+        <p>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required
+                placeholder="Nombre">
+            <span *ngIf="!name.valid && name.touched">
+                <small>El nombre es obligatorio</small>
+
+            </span>
+        </p>
+        <p>
+            <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="user.lastName" class="form-control"
+                required placeholder="Apellidos">
+            <span *ngIf="!lastName.valid && lastName.touched">
+                <small>Los apellidos son obligatorios</small>
+            </span>
+        </p>
+        <p>
+            <input type="text" name="userName" #userName="ngModel" [(ngModel)]="user.userName" class="form-control"
+                required placeholder="username">
+            <span *ngIf="!userName.valid && userName.touched">
+                <small>El nombre de usuario es obligatorio</small>
+            </span>
+        </p>
+        <p>
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="email">
+            <span *ngIf="!email.valid && email.touched">
+                <small>El correo no es correcto</small>
+
+            </span>
+        </p>
+        <p>
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control"
+                required placeholder="password">
+            <span *ngIf="!password.valid && password.touched">
+                <small>La contraseña es obligatoria</small>
+
+            </span>
+        </p>
+
+        <input type="submit" value="Regístrate" class="btn btn-success btn-block mb-3"
+            [disabled]="!registerForm.form.valid">
+
+        <small>Al registrarte, estás aceptando las <a href="#">Condiciones de uso</a> y <a href="#">Política de
+                privacidad</a> de Creatist.</small>
+        <br>
+        <small>¿Ya te registraste? <a [routerLink]="['/login']">Inicia sesión </a>en tu cuenta.</small>
+
+    </form>
+</div>

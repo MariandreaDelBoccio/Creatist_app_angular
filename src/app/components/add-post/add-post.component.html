@@ -1,0 +1,30 @@
+<div id="new-post" class="col-lg-12 pull-left card card-default sidebar-32">
+    <h3 class="mt-3 title">Crear</h3>
+    <hr>
+
+    <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm)" class="col-lg-12 form">
+        <p>
+            <label class="fa fa-camera-retro"></label>
+            <label class="fa fa-play ml-2"></label>
+            <br>
+            <input type="file" class="examinar mt-2" name="image" [(ngModel)]="post.file" placeholder="Explorar"
+                required (change)="fileChangeEvent($event)">
+            <span *ngIf="post.file.valid && post.file.touched">
+                No olvides subir tu creación
+            </span>
+        </p>
+        <p>
+            <label class="frase">
+                <h6><span id="creativo">Creativo </span> no es el que <span id="imagina">imagina</span>, si no el que
+                    hace
+                    <span id="imaginar">imaginar</span>
+                </h6>
+            </label>
+            <textarea name="text" #text='ngModel' [(ngModel)]="post.text" class="form-control text_area"
+                placeholder="No necesitas describir tus buenas ideas, pero te damos la opción por si te apetece hacerlo..."></textarea>
+        </p>
+
+        <input type="submit" value="Publicar" class="btn btn-success mb-3 btnAdd_post"
+            [disabled]="!newPubForm.form.valid">
+    </form>
+</div>

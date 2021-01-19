@@ -1,0 +1,53 @@
+<div class="col-lg-8 pull-left users">
+    <h4 id="people">Personas</h4>
+
+    <div class="people">
+        <div *ngFor="let user of users" class="item-user">
+            <div class="card usersCards">
+                <div class="card-body">
+                    <div class="imageUser pull-left">
+                        <a href="#">
+                            <img src="{{url + 'get-image-user/' + user.image}}" *ngIf="user.image">
+                            <img src="../../../assets/imgs/64572.png" class="avatar-default" *ngIf="!user.image">
+                        </a>
+                    </div>
+                    <div class="user_name pull-left">
+                        <p>
+                            <a [routerLink]="['/perfil', user._id]">
+                                {{user.name + ' ' + user.lastName}}
+                            </a>
+                        </p>
+                        <p>
+                            {{user.userName}}
+                        </p>
+                    </div>
+                    <div class="pull-right" *ngIf="user._id != identity._id">
+                        <button class="btn btn-success mr-2 follow-btn" *ngIf="follows.indexOf(user._id) < 0"
+                            (click)="followUser(user._id)">
+                            Seguir
+                        </button>
+                        <button class="btn btn-primary unfollow-btn" *ngIf="follows.indexOf(user._id) >= 0"
+                            (mouseenter)="mouseEnter(user._id)" (mouseleave)="mouseLeave(user._id)">
+                            <span *ngIf="user._id == followUserOver; else following" (click)="unfollowUser(user._id)">
+                                Dejar de seguir
+                            </span>
+                            <ng-template #following>
+                                Siguiendo
+                            </ng-template>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="pagination pull-right">
+            <li class="btn" *ngIf="page >1"><a [routerLink]="['/personas', prev_page]">Anterior</a>
+            </li>
+            <li class="btn" *ngIf="pages != page"><a [routerLink]="['/personas', next_page]">Siguiente</a></li>
+        </ul>
+    </div>
+</div>
+
+<app-sidebar></app-sidebar>
+
+<div class="clearfix"></div>

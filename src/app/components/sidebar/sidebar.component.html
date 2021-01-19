@@ -1,0 +1,56 @@
+<div class="div_me">
+    <h4 class="h3-strong" id="me">Yo</h4>
+
+    <div id="user-card" class="col-lg-4 card card-default pull-left">
+        <div class="avatar pull-left">
+            <img src="{{url + 'get-image-user/' + identity.image}}" alt="{{identity.userName}}" *ngIf="identity.image">
+            <img src="../../../assets/64572.png" alt="{{identity.userName}}" *ngIf="!identity.image">
+        </div>
+
+        <div class="nameLast pull-left">
+            <h6 class="name-lastName">
+                {{identity.name + ' ' + identity.lastName}}
+            </h6>
+            <a href="#" class="userName">
+                {{identity.userName}}
+            </a>
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="stats" *ngIf="stats">
+            <div class="following">
+                <a href="#">
+                    <span class="label-stats">
+                        Siguiendo
+                    </span>
+                    <span class="number-stats">
+                        {{stats.following}}
+                    </span>
+                </a>
+            </div>
+            <div class="following">
+                <a href="#">
+                    <span class="label-stats">
+                        Seguidores
+                    </span>
+                    <span class="number-stats">
+                        {{stats.followed}}
+                    </span>
+                </a>
+            </div>
+            <div class="following">
+                <a href="#">
+                    <span class="label-stats">
+                        Publicaciones
+                    </span>
+                    <span class="number-stats">
+                        {{stats.posts}}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

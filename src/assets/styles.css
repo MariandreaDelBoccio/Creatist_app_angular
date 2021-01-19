@@ -1,0 +1,125 @@
+* {
+    font-family: 'Source Sans Pro';
+}
+
+.navigation {
+    padding: 0px;
+}
+
+.navigation .navbar {
+    border-radius: 0px;
+    border: none;
+}
+
+#linkLogin{
+    color: rgb(0, 0, 0);
+    padding: 10px; 
+}
+
+#botonBootstrap {
+    background-color: rgb(236, 160, 110);
+    border: none;
+}
+
+#botonBootstrap:hover {
+    border: none;
+    background-color: rgba(236, 160, 110, 0.658);
+}
+
+#botonBootstrapLogin {
+    background-color: white;
+}
+
+#linkLogin:hover{
+    color:black;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#linkRegister{
+    color: rgb(255, 255, 255);
+    padding: 10px; 
+    margin: 8px;
+}
+
+#linkRegister:hover{
+    padding: 10px;
+    text-decoration: none;
+}
+
+.jumbotron {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#headerTimeline {
+    margin-left: 1000px;
+}
+
+#headerTimeline li a{
+    text-decoration: none;
+    color: rgb(65, 64, 64);
+    padding: 10px;
+}
+
+.fa-home {
+    margin-top: 12px;
+}
+
+.fa-user {
+    margin-top: 12px;
+}
+
+.fa-plus-square {
+    margin-top: 12px;
+}
+
+#formBuscar {
+    margin-top: 13px;
+    margin-right: 15px;
+}
+
+.navigation .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.navigation .avatar img{
+    width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 8px 0px 8px 0px rgba(0, 0, 0, 0.548);
+  right: 0;
+  z-index: 9999;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: rgb(230, 230, 230);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.footer {
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(180, 179, 179);
+}

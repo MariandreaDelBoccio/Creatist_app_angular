@@ -1,0 +1,39 @@
+<div class="col-lg-12 posts_div">
+    <div class="posts prueba-wrapper">
+        <div class="flecha-izq fa fa-arrow-right"></div>
+        <div *ngFor="let post of posts" class="item_post prueba-card">
+            <div class="card card-default">
+                <div class="card body">
+                    <div class="imageUser pull-left">
+                        <a [routerLink]="['/perfil', post.user._id]">
+                            <img src="{{url + 'get-image-user/' + post.user.image}}" *ngIf="post.user.image">
+                            <img src="../../../assets/imgs/64572.png" class="avatar-default" *ngIf="!post.user.image">
+                        </a>
+                    </div>
+                    <div class="user_name mt-3">
+                        <a [routerLink]="['/perfil', post.user._id]">
+                            {{post.user.name + ' ' + post.user.lastName}}
+                        </a>
+
+                    </div>
+
+                    <div class="date">
+                        {{(post.created_at | amFromUnix) | amTimeAgo}}
+                    </div>
+
+                    <h4 class="post_text mt-3">{{post.text}}</h4>
+
+                    <div class="mt-2 mb-2 imagePost">
+                        <img src="{{url + 'get-image-post/' + post.file}}">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="flecha-izq fa fa-arrow-left"></div>
+    </div>
+
+
+</div>
+<div class="clearfix"></div>

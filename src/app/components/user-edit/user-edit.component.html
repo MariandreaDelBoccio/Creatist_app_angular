@@ -1,0 +1,49 @@
+<div class="col-lg-3" id="login">
+
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        'Se han actualizado los datos correctamente'
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        'No se ha podido actualizar los datos correctamente'
+    </div>
+
+    <h3>Configuración del perfil</h3>
+    <h6>Cambia los datos de tu cuenta aquí</h6>
+    <hr>
+    <form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12">
+        <p>
+            <small>Name</small>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required class="form-control">
+            <span *ngIf="!name.value && name.touched">
+                <small>El nombre es obligatorio</small>
+            </span>
+        </p>
+        <p>
+            <small>Username</small>
+            <input type="text" name="userName" #userName="ngModel" [(ngModel)]="user.userName" required
+                class="form-control">
+            <span *ngIf="!userName.value && userName.touched">
+                <small>El nombre de usuario es obligatorio</small>
+            </span>
+        </p>
+        <p>
+            <small>Email</small>
+            <input type="text" name="email" #email="ngModel" [(ngModel)]="user.email" required class="form-control">
+            <span *ngIf="!email.value && email.touched">
+                <small>El email es obligatorio</small>
+            </span>
+        </p>
+
+        <div *ngIf="user.image" class="mb-3 userImage">
+            <img src="{{url+ 'get-image-user/' + user.image}}">
+        </div>
+
+        <div class="custom-file mb-3">
+            <input type="file" class="custom-file-input" id="customFileLang" lang="es" (change)="fileChange($event)">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+        </div>
+        <input type="submit" value="{{title}}" class="btn btn-warning btn-block" [disabled]="!userEditForm.form.valid">
+
+    </form>
+
+</div>

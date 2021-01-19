@@ -1,0 +1,30 @@
+#login {
+    margin-left: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#login h3{
+    font-weight: bold;
+    margin-left: 12px;
+}
+
+#login h6{
+margin-left: 12px;
+font-weight: lighter;
+}
+
+.btn-warning {
+    border: none;
+    background-color: rgb(236, 160, 110);
+}
+
+.btn-warning:hover {
+    border: none;
+    background-color: rgba(236, 160, 110, 0.658);
+}
+
+.userImage img{
+    width: auto;
+    height: 200px;
+}

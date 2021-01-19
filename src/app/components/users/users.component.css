@@ -1,0 +1,51 @@
+.users {
+    background-color: rgba(233, 231, 231, 0.514);
+    padding: 30px;
+    margin-right: 20px;
+}
+
+.item-user .imageUser{
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.item-user .imageUser img{
+    width: 100%;
+}
+
+.usersCards {
+    margin: 30px;
+    margin-left: 50px;
+}
+
+.avatar-default img{
+    width: 10px;
+    height: auto;
+}
+
+.follow-btn {
+    background-color: rgba(38, 151, 243, 0.829);
+    border: none;
+}
+
+.follow-btn:hover {
+    background-color: rgba(20, 145, 247, 0.986);
+    border: none;
+}
+
+.unfollow-btn {
+    background-color: rgba(247, 180, 54, 0.699);
+    border: none;
+}
+
+.unfollow-btn:hover {
+    background-color: rgba(247, 180, 54, 0.925);
+    border: none;
+}
+
+#people {
+    text-align: center;
+}

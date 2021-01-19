@@ -1,0 +1,84 @@
+<div class="col-lg-12">
+
+    <div id="data-profile" *ngIf="user">
+        <div class="avatar">
+            <img src="{{url + 'get-image-user/' + user.image}}" *ngIf="user.image">
+            <img src="../../../assets/imgs/64572.png" *ngIf="!user.image">
+        </div>
+
+        <div class="user-name">
+            <div class="follow">
+                <div class="label label-default" *ngIf="followed">
+                    Te sigue
+                </div>
+            </div>
+            <div class="clear-fix"></div>
+            <p class="name">{{user.name + ' ' + user.lastName}}</p>
+            <p class="user-name">{{user.userName}}</p>
+            <div class="clear-fix"></div>
+            <button class="btn btn-sm btn-success" *ngIf="!following" (click)="followUser(user._id)">
+                Seguir
+            </button>
+            <button class="btn btn-sm btn-danger" *ngIf="following" (click)="unfollowUser(user._id)">
+                Dejar de seguir
+            </button>
+        </div>
+
+        <div class="stats" *ngIf="stats">
+            <div class="following">
+                <a [routerLink]="['/siguiendo', identity._id, 1]">
+                    <span class="label-stats">
+                        Siguiendo
+                    </span>
+                    <span class="number-stats">
+                        {{stats.following}}
+                    </span>
+                </a>
+            </div>
+            <div class="following">
+                <a href="#">
+                    <span class="label-stats">
+                        Seguidores
+                    </span>
+                    <span class="number-stats">
+                        {{stats.followed}}
+                    </span>
+                </a>
+            </div>
+            <div class="following">
+                <a href="#">
+                    <span class="label-stats">
+                        Publicaciones
+                    </span>
+                    <span class="number-stats">
+                        {{stats.posts}}
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="posts prueba-wrapper">
+            <div class="flecha-izq fa fa-arrow-right"></div>
+            <div *ngFor="let post of posts" class="item_post prueba-card">
+                <div class="card card-default">
+                    <div class="card body">
+
+                        <div class="date">
+                            {{(post.created_at | amFromUnix) | amTimeAgo}}
+                        </div>
+
+                        <h4 class="post_text mt-3">{{post.text}}</h4>
+
+                        <div class="mt-2 mb-2 imagePost">
+                            <img src="{{url + 'get-image-post/' + post.file}}">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="flecha-izq fa fa-arrow-left"></div>
+        </div>
+
+    </div>
+</div>
